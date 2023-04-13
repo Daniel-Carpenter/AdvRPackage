@@ -1,0 +1,81 @@
+---
+title:    "Package 1 Progress (Installment 3)"
+subtitle: "Advanced R's R Package Development"
+author:   "Author: Daniel Carpenter"
+date:     "`r format(Sys.Date(), '%B %d, %Y')`"
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
+    toc_depth: 3
+    theme: yeti
+    fig_width: 7
+    fig_height: 5
+---
+
+```{r defaultRendering, include=FALSE}
+knitr::opts_chunk$set(
+	echo    = TRUE, # Default only show output (not code)
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+> This report shows the third installment of the Advanced R's R Package Creation
+
+# Requirements
+
+- Includes a demonstration of an R package that contains the constructor and print method.
+- R package GitHub link: https://github.com/Daniel-Carpenter/AdvRPackage
+
+
+---
+
+<br>
+
+# Solution
+
+## Packages
+```{r packages}
+library(devtools)    # check function
+library(sloop)       # Checking the dispatch of functions
+library(AdvRPackage) # My package: https://github.com/Daniel-Carpenter/AdvRPackage
+```
+
+## Testing the Package
+
+### `check` Function
+```{r check}
+# Check the current (or package) directory containing the R package
+devtools::check(".") 
+```
+
+
+### Create Sample Data
+```{r data}
+# X Variable
+set.seed(21)
+x <- rnorm(30,5,2)
+
+# Y Variable
+set.seed(23)
+y <- rnorm(30, 3,2)
+
+# Alpha level
+alpha <- 0.05
+```
+
+
+### Call the Constructor
+```{r callConstructor}
+# Call the contructor
+obj <- AdvRPackage::myttest(x = x, y = y, alpha = 0.05)
+```
+
+
+### Print the Output
+```{r callMethods}
+class(obj)
+print(obj)
+s3_dispatch( print(obj) ) # Note the dispatch
+```

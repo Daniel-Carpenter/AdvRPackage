@@ -1583,7 +1583,7 @@ devtools::check(&quot;.&quot;) </code></pre>
 ## • _R_CHECK_FORCE_SUGGESTS_      : FALSE
 ## • NOT_CRAN                      : true
 ## ── R CMD check ─────────────────────────────────────────────────────────────────
-## * using log directory &#39;C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpMNh5Vd/AdvRPackage.Rcheck&#39;
+## * using log directory &#39;C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpUpNQNv/AdvRPackage.Rcheck&#39;
 ## * using R version 4.2.2 (2022-10-31 ucrt)
 ## * using platform: x86_64-w64-mingw32 (64-bit)
 ## * using session charset: UTF-8
@@ -1610,8 +1610,8 @@ devtools::check(&quot;.&quot;) </code></pre>
 ## License components which are templates and need &#39;+ file LICENSE&#39;:
 ##   MIT
 ## * checking top-level files ... NOTE
-## Non-standard files/directories found at top level:
-##   &#39;Installment-3-Daniel-Carpenter.html&#39; &#39;README.Rmd&#39;
+## Non-standard file/directory found at top level:
+##   &#39;README.Rmd&#39;
 ## * checking for left-over files ... OK
 ## * checking index information ... OK
 ## * checking package subdirectories ... OK
@@ -1644,10 +1644,10 @@ devtools::check(&quot;.&quot;) </code></pre>
 ## 
 ## Status: 2 NOTEs
 ## See
-##   &#39;C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpMNh5Vd/AdvRPackage.Rcheck/00check.log&#39;
+##   &#39;C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpUpNQNv/AdvRPackage.Rcheck/00check.log&#39;
 ## for details.</code></pre>
 <pre><code>## ── R CMD check results ────────────────────────────────── AdvRPackage 0.1.0 ────
-## Duration: 36s
+## Duration: 33.3s
 ## 
 ## ❯ checking DESCRIPTION meta-information ... NOTE
 ##   Malformed Title field: should not end in a period.
@@ -1656,64 +1656,10 @@ devtools::check(&quot;.&quot;) </code></pre>
 ##     MIT
 ## 
 ## ❯ checking top-level files ... NOTE
-##   Non-standard files/directories found at top level:
-##     &#39;Installment-3-Daniel-Carpenter.html&#39; &#39;README.Rmd&#39;
+##   Non-standard file/directory found at top level:
+##     &#39;README.Rmd&#39;
 ## 
 ## 0 errors ✔ | 0 warnings ✔ | 2 notes ✖</code></pre>
-</div>
-<div id="print-functions" class="section level3">
-<h3>Print Functions</h3>
-<pre class="r"><code># myttest function
-print(AdvRPackage::myttest)</code></pre>
-<pre><code>## function(x, y, alpha = 0.05) {
-## 
-##   # Check if x and y are numeric vectors
-##   if (!is.numeric(x) || !is.numeric(y)) {
-##     stop(&quot;x and y must be numeric vectors.&quot;)
-##   }
-## 
-##   # Perform a two-sample t-test on x and y
-##   performTTest &lt;- function(x, y, alpha) {
-## 
-##     # Assume that the variances in the population are the same (this will mean a simple no conditional function)
-##     tTestResults &lt;- stats::t.test(x, y, var.equal = TRUE)
-## 
-##     # Reteive Confidence interval and p value
-##     ci     = tTestResults[[&#39;conf.int&#39;]]
-##     pValue = tTestResults[[&#39;p.value&#39;]]
-## 
-##     # Return the test type (name), t-test output, and if we rejected the null
-##     return(list(ci           = ci,
-##                 pValue       = pValue,
-##                 tTestResults = tTestResults
-##     )
-##     )
-##   }
-## 
-##   # Call the performTTest function and store the results in testResult
-##   testResult &lt;- performTTest(x, y, alpha)
-## 
-##   # Create a results list of the test results and input data
-##   result &lt;- list(
-##     data         = data.frame(x = x, y = y),
-##     alpha        = alpha,
-##     ci           = testResult$ci,
-##     pValue       = testResult$pValue
-##   )
-## 
-##   # Set the class of the result object to &quot;Rttest&quot;
-##   class(result) &lt;- &quot;Rttest&quot;
-## 
-##   # Return the result object invisibly
-##   return(invisible(result))
-## }
-## &lt;environment: namespace:AdvRPackage&gt;</code></pre>
-<pre class="r"><code># print method
-print(AdvRPackage::print)</code></pre>
-<pre><code>## function(Rttest_obj, roundToDigits = 3) {
-##   UseMethod(&quot;print&quot;)
-## }
-## &lt;environment: namespace:AdvRPackage&gt;</code></pre>
 </div>
 <div id="create-sample-data" class="section level3">
 <h3>Create Sample Data</h3>

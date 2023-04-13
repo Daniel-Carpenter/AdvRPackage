@@ -11,6 +11,8 @@ output:
     theme: yeti
     fig_width: 7
     fig_height: 5
+  # github_document:
+  #   toc: yes
 ---
 
 ```{r defaultRendering, include=FALSE}
@@ -48,6 +50,16 @@ library(AdvRPackage) # My package: https://github.com/Daniel-Carpenter/AdvRPacka
 ```{r check}
 # Check the current (or package) directory containing the R package
 devtools::check(".") 
+```
+
+
+### Print Functions
+```{r}
+# myttest function
+print(AdvRPackage::myttest)
+
+# print method
+print(AdvRPackage::print)
 ```
 
 

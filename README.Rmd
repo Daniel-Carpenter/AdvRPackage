@@ -4,15 +4,15 @@ subtitle: "Advanced R's R Package Development"
 author:   "Author: Daniel Carpenter"
 date:     "`r format(Sys.Date(), '%B %d, %Y')`"
 output: 
-  html_document: 
-    toc: yes
-    toc_float: yes
-    toc_depth: 3
-    theme: yeti
-    fig_width: 7
-    fig_height: 5
-  # github_document:
+  # html_document: 
   #   toc: yes
+  #   toc_float: yes
+  #   toc_depth: 3
+  #   theme: yeti
+  #   fig_width: 7
+  #   fig_height: 5
+  github_document:
+    toc: yes
 ---
 
 ```{r defaultRendering, include=FALSE}
@@ -86,8 +86,15 @@ obj <- AdvRPackage::myttest(x = x, y = y, alpha = 0.05)
 
 
 ### Print the Output
-```{r callMethods}
+```{r printing}
 class(obj)
 print(obj)
 s3_dispatch( print(obj) ) # Note the dispatch
+```
+
+
+### Plot the Output
+```{r plots}
+plot(obj)
+s3_dispatch( plot(obj) ) # Note the dispatch
 ```

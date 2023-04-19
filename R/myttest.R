@@ -1,3 +1,4 @@
+# Packages
 library(stats)
 
 #' @title Two-sample t-test function
@@ -28,6 +29,8 @@ library(stats)
 #'
 #' # Print object
 #' print(obj)
+
+
 # Create the constructor
 myttest <- function(x, y, alpha = 0.05) {
 

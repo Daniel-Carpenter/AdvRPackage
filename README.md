@@ -1,7 +1,7 @@
 Package 1 Progress (Installment 3)
 ================
 Author: Daniel Carpenter
-April 13, 2023
+April 19, 2023
 
 - <a href="#requirements" id="toc-requirements">Requirements</a>
 - <a href="#solution" id="toc-solution">Solution</a>
@@ -17,6 +17,7 @@ April 13, 2023
       Constructor</a>
     - <a href="#print-the-output" id="toc-print-the-output">Print the
       Output</a>
+    - <a href="#plot-the-output" id="toc-plot-the-output">Plot the Output</a>
 
 > This report shows the third installment of the Advanced R’s R Package
 > Creation
@@ -76,8 +77,8 @@ devtools::check(".")
     ## • _R_CHECK_FORCE_SUGGESTS_      : FALSE
     ## • NOT_CRAN                      : true
     ## ── R CMD check ─────────────────────────────────────────────────────────────────
-    ## * using log directory 'C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpQpZXy2/AdvRPackage.Rcheck'
-    ## * using R version 4.2.2 (2022-10-31 ucrt)
+    ## * using log directory 'C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpOYuwOr/AdvRPackage.Rcheck'
+    ## * using R version 4.2.3 (2023-03-15 ucrt)
     ## * using platform: x86_64-w64-mingw32 (64-bit)
     ## * using session charset: UTF-8
     ## * using options '--no-manual --as-cran'
@@ -98,13 +99,11 @@ devtools::check(".")
     ## * checking package directory ... OK
     ## * checking for future file timestamps ... OK
     ## * checking DESCRIPTION meta-information ... NOTE
-    ## Malformed Title field: should not end in a period.
-    ## Malformed Description field: should contain one or more complete sentences.
     ## License components which are templates and need '+ file LICENSE':
     ##   MIT
     ## * checking top-level files ... NOTE
     ## Non-standard files/directories found at top level:
-    ##   'README.Rmd' 'README.html'
+    ##   'Installment-3-Daniel-Carpenter.html' 'README.Rmd' 'README.html'
     ## * checking for left-over files ... OK
     ## * checking index information ... OK
     ## * checking package subdirectories ... OK
@@ -120,7 +119,12 @@ devtools::check(".")
     ## * checking S3 generic/method consistency ... OK
     ## * checking replacement functions ... OK
     ## * checking foreign function calls ... OK
-    ## * checking R code for possible problems ... OK
+    ## * checking R code for possible problems ... NOTE
+    ## plot.Rttest: no visible global function definition for 'where'
+    ## plot.Rttest: no visible binding for global variable 'sampleNames'
+    ## plot.Rttest: no visible binding for global variable 'sampleValues'
+    ## Undefined global functions or variables:
+    ##   sampleNames sampleValues where
     ## * checking Rd files ... OK
     ## * checking Rd metadata ... OK
     ## * checking Rd line widths ... OK
@@ -134,26 +138,30 @@ devtools::check(".")
     ## * checking for non-standard things in the check directory ... OK
     ## * checking for detritus in the temp directory ... OK
     ## * DONE
-    ## 
-    ## Status: 2 NOTEs
+    ## Status: 3 NOTEs
     ## See
-    ##   'C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpQpZXy2/AdvRPackage.Rcheck/00check.log'
+    ##   'C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpOYuwOr/AdvRPackage.Rcheck/00check.log'
     ## for details.
 
     ## ── R CMD check results ────────────────────────────────── AdvRPackage 0.1.0 ────
-    ## Duration: 30.9s
+    ## Duration: 36.3s
     ## 
     ## ❯ checking DESCRIPTION meta-information ... NOTE
-    ##   Malformed Title field: should not end in a period.
-    ##   Malformed Description field: should contain one or more complete sentences.
     ##   License components which are templates and need '+ file LICENSE':
     ##     MIT
     ## 
     ## ❯ checking top-level files ... NOTE
     ##   Non-standard files/directories found at top level:
-    ##     'README.Rmd' 'README.html'
+    ##     'Installment-3-Daniel-Carpenter.html' 'README.Rmd' 'README.html'
     ## 
-    ## 0 errors ✔ | 0 warnings ✔ | 2 notes ✖
+    ## ❯ checking R code for possible problems ... NOTE
+    ##   plot.Rttest: no visible global function definition for 'where'
+    ##   plot.Rttest: no visible binding for global variable 'sampleNames'
+    ##   plot.Rttest: no visible binding for global variable 'sampleValues'
+    ##   Undefined global functions or variables:
+    ##     sampleNames sampleValues where
+    ## 
+    ## 0 errors ✔ | 0 warnings ✔ | 3 notes ✖
 
 ### Print Functions
 
@@ -514,3 +522,18 @@ s3_dispatch( print(obj) ) # Note the dispatch
 
     ## => print.Rttest
     ##  * print.default
+
+### Plot the Output
+
+``` r
+plot(obj)
+```
+
+![](README_files/figure-gfm/plots-1.png)<!-- -->
+
+``` r
+s3_dispatch( plot(obj) ) # Note the dispatch
+```
+
+    ## => plot.Rttest
+    ##  * plot.default

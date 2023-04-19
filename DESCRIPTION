@@ -1,17 +1,19 @@
 Package: AdvRPackage
 Type: Package
-Title: Advanced R Package for Two-sample T-Test function and associated methods.
+Title: Advanced R Package for Two-sample T-Test function and associated methods
 Version: 0.1.0
 Author@R: person("Daniel", "Carpenter", email = "danielcarpenter@ou.edu",
                   role = c("aut", "cre") )
 Author: Daniel Carpenter [aut, cre]
 Maintainer: Daniel Carpenter <danielcarpenter@ou.edu>
-Description: Advanced R Package for T-Test
+Description: This packag is for Advanced R's Package for a T-Test.
 License: MIT
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.1.0)
 Imports:
     kableExtra,
-    stats
+    stats,
+    ggplot2,
+    tidyr
 RoxygenNote: 7.2.3

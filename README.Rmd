@@ -1,59 +1,69 @@
 ---
-title:    "Package 1 Progress (Installment 3)"
-subtitle: "Advanced R's R Package Development"
 author:   "Author: Daniel Carpenter"
 date:     "`r format(Sys.Date(), '%B %d, %Y')`"
 output: 
-  # html_document: 
+  github_document:
+    toc: yes
+  # html_document:
   #   toc: yes
   #   toc_float: yes
   #   toc_depth: 3
   #   theme: yeti
   #   fig_width: 7
   #   fig_height: 5
-  github_document:
-    toc: yes
 ---
 
-```{r defaultRendering, include=FALSE}
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
 knitr::opts_chunk$set(
-	echo    = TRUE, # Default only show output (not code)
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%",
+  echo    = TRUE, # Default only show output (not code)
 	message = FALSE,
 	warning = FALSE
 )
 ```
 
-> This report shows the third installment of the Advanced R's R Package Creation
+# AdvRPackage
 
-# Requirements
+<!-- badges: start -->
+<!-- badges: end -->
 
-- Includes a demonstration of an R package that contains the constructor and print method.
-- R package GitHub link: https://github.com/Daniel-Carpenter/AdvRPackage
+## Installation
 
+You can install the development version of AdvRPackage from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Daniel-Carpenter/AdvRPackage")
+```
 
 ---
 
 <br>
 
-# Solution
+## Examples
 
-## Packages
+### Packages
 ```{r packages}
 library(devtools)    # check function
 library(sloop)       # Checking the dispatch of functions
 library(AdvRPackage) # My package: https://github.com/Daniel-Carpenter/AdvRPackage
 ```
 
-## Testing the Package
+### Testing the Package
 
-### `check` Function
+#### `check` Function
 ```{r check}
 # Check the current (or package) directory containing the R package
-devtools::check(".") 
+# devtools::check(".") 
 ```
 
 
-### Print Functions
+#### Print Functions
 ```{r}
 # myttest function
 print(AdvRPackage::myttest)
@@ -63,7 +73,7 @@ print(AdvRPackage::print)
 ```
 
 
-### Create Sample Data
+#### Create Sample Data
 ```{r data}
 # X Variable
 set.seed(21)
@@ -78,14 +88,14 @@ alpha <- 0.05
 ```
 
 
-### Call the Constructor
+#### Call the Constructor
 ```{r callConstructor}
 # Call the contructor
 obj <- AdvRPackage::myttest(x = x, y = y, alpha = 0.05)
 ```
 
 
-### Print the Output
+#### Print the Output
 ```{r printing}
 class(obj)
 print(obj)
@@ -93,7 +103,7 @@ s3_dispatch( print(obj) ) # Note the dispatch
 ```
 
 
-### Plot the Output
+#### Plot the Output
 ```{r plots}
 plot(obj)
 s3_dispatch( plot(obj) ) # Note the dispatch

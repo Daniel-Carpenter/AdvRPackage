@@ -35,6 +35,3 @@ obj <- myttest(x = x, y = y, alpha = 0.05)
 # Plot the sample Rttest
 plot(obj)
 }
-\seealso{
-\code{\link{plot.Rttest}}
-}

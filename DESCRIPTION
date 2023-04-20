@@ -7,7 +7,7 @@ Author@R: person("Daniel", "Carpenter", email = "danielcarpenter@ou.edu",
 Author: Daniel Carpenter [aut, cre]
 Maintainer: Daniel Carpenter <danielcarpenter@ou.edu>
 Description: This packag is for Advanced R's Package for a T-Test.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.1.0)

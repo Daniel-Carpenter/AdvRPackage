@@ -1,7 +1,4 @@
-# Packages
-library(stats)
-
-#' @title Two-sample t-test function
+#' @title       Two-sample t-test function
 #' @description Performs a two-sample t-test on x and y and returns the results as an object of class "Rttest"
 #'
 #' @param x A numeric vector of data for group 1
@@ -9,6 +6,8 @@ library(stats)
 #' @param alpha A numeric value specifying the level of significance (default is 0.05)
 #'
 #' @return A list containing the results of the t-test, including the test type, summary statistics, null hypothesis rejection, and input data
+#'
+#' @importFrom stats t.test
 #'
 #' @export myttest
 #'
@@ -43,7 +42,7 @@ myttest <- function(x, y, alpha = 0.05) {
   performTTest <- function(x, y, alpha) {
 
     # Assume that the variances in the population are the same (this will mean a simple no conditional function)
-    tTestResults <- stats::t.test(x, y, var.equal = TRUE)
+    tTestResults <- t.test(x, y, var.equal = TRUE)
 
     # Reteive Confidence interval and p value
     ci     = tTestResults[['conf.int']]

@@ -10,7 +10,7 @@ theme_ggplot()
 a theme via a list of geoms that can be added to ggplot2 objects
 }
 \description{
-Function that returns a theme object for ggplot objects
+Creates a custom theme for reuse in this package
 }
 \examples{
 

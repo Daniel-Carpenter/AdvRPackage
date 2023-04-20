@@ -1,10 +1,5 @@
-# Packages
-library(kableExtra) # printing df's
-
-
-#' Print Rttest Objects in a Readable Format
-#'
-#' This function defines the print method for Rttest objects. It extracts the data from the object and
+#' @title       Print Rttest Objects in a Readable Format
+#' @description This function defines the print method for Rttest objects. It extracts the data from the object and
 #' prints it in a readable format using the kable function from the knitr package.
 #'
 #' @param Rttest_obj An object of class Rttest.
@@ -12,6 +7,9 @@ library(kableExtra) # printing df's
 #' @param roundToDigits Number of digits to round the output to.
 #'
 #' @return A formatted table displaying the data from the Rttest object.
+#'
+#' @importFrom kableExtra kable
+#'
 #' @export
 #' @examples
 #' # Create a sample Rttest object
@@ -25,7 +23,7 @@ library(kableExtra) # printing df's
 print.Rttest <- function(Rttest_obj, roundToDigits = 3) {
 
   # Return Data in Kable Format. Note rounding of digits for ease of viewing
-  Rttest_obj$data |> kableExtra::kable(digits  = roundToDigits,
+  Rttest_obj$data |> kable(digits  = roundToDigits,
                            caption = paste("Rttest Printed Data. Note rounded to",
                                            roundToDigits, 'digits'),
   )

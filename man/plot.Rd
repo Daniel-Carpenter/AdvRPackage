@@ -15,3 +15,6 @@ The result of the specific Plot method for the class of the input object.
 \description{
 This function creates a generic method for Ploting Rttest objects. Uses ggplot2
 }
+\seealso{
+\code{\link{plot.Rttest}}
+}

@@ -17,5 +17,6 @@ Imports:
     ggplot2,
     tidyr,
     dplyr,
-    stringr
+    stringr,
+    purrr
 RoxygenNote: 7.2.3

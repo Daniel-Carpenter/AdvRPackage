@@ -4,7 +4,7 @@
 \alias{myttest}
 \title{Two-sample t-test function}
 \usage{
-myttest(x, y, alpha = 0.05)
+myttest(x, y, alpha = 0.05, paired = FALSE)
 }
 \arguments{
 \item{x}{A numeric vector of data for group 1}
@@ -12,6 +12,8 @@ myttest(x, y, alpha = 0.05)
 \item{y}{A numeric vector of data for group 2}
 
 \item{alpha}{A numeric value specifying the level of significance (default is 0.05)}
+
+\item{paired}{A logical indicating whether the samples are paired (default is FALSE)}
 }
 \value{
 A list containing the results of the t-test, including the test type, summary statistics, null hypothesis rejection, and input data

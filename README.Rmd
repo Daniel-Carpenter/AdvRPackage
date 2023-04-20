@@ -4,9 +4,10 @@ date:     "`r format(Sys.Date(), '%B %d, %Y')`"
 output: 
   github_document:
     toc: yes
+    toc_depth: 4
   # html_document:
   #   toc: yes
-  #   toc_float: yes
+  #   toc_float: yes    
   #   toc_depth: 3
   #   theme: yeti
   #   fig_width: 7
@@ -22,89 +23,103 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%",
   echo    = TRUE, # Default only show output (not code)
-	message = FALSE,
-	warning = FALSE
+  message = FALSE,
+  warning = FALSE
 )
 ```
 
-# AdvRPackage
+# `AdvRPackage`
 
 <!-- badges: start -->
 <!-- badges: end -->
 
 ## Installation
 
-You can install the development version of AdvRPackage from [GitHub](https://github.com/) with:
+You can install the development version of `AdvRPackage` from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("Daniel-Carpenter/AdvRPackage")
 ```
 
----
-
-<br>
 
 ## Examples
 
-### Packages
-```{r packages}
-library(devtools)    # check function
-library(sloop)       # Checking the dispatch of functions
+### Load Package
+```{r loadPackage}
 library(AdvRPackage) # My package: https://github.com/Daniel-Carpenter/AdvRPackage
 ```
 
-### Testing the Package
+<br>
 
-#### `check` Function
-```{r check}
-# Check the current (or package) directory containing the R package
-# devtools::check(".") 
-```
+---
 
+### Test `1` - Default T-Test
 
-#### Print Functions
+* Notice the *non*-disparate distributions. The program will detect *equal* variances
+and use a `Default` T-Test.
+
 ```{r}
-# myttest function
-print(AdvRPackage::myttest)
+# Create sample data
+set.seed(32); x = rnorm(30, mean = 10, sd = 15)
+set.seed(35); y = rnorm(30, mean = 8, sd = 15)
 
-# print method
-print(AdvRPackage::print)
+# Run the t-test function using this package
+ans1 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = FALSE)
+
+# Print Method 
+print(ans1)
+
+# Plot Method 
+plot(ans1)
 ```
 
 
-#### Create Sample Data
-```{r data}
-# X Variable
-set.seed(21)
-x <- rnorm(30,5,2)
+<br>
 
-# Y Variable
-set.seed(23)
-y <- rnorm(30, 3,2)
+---
 
-# Alpha level
-alpha <- 0.05
+### Test `2` - Welch T-Test
+
+* Notice the *disparate* distributions. The program will detect *non*-equal variances
+and use a `Welch` T-Test.
+
+```{r}
+# Create sample data
+set.seed(32); x = rnorm(30, mean = 10, sd = 5)
+set.seed(35); y = rnorm(30, mean = 8, sd = 15)
+
+# Run the t-test function using this package
+ans2 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = FALSE)
+
+# Print Method 
+print(ans2)
+
+# Plot Method 
+plot(ans2)
 ```
 
 
-#### Call the Constructor
-```{r callConstructor}
-# Call the contructor
-obj <- AdvRPackage::myttest(x = x, y = y, alpha = 0.05)
+<br>
+
+---
+
+### Test `3` - Paired T-Test
+
+* Notice that when a `Paired` T-Test is detected, it will plot the distribution 
+of sample differences
+
+```{r}
+# Create sample data
+set.seed(32); x = rnorm(30, mean = 10, sd = 15)
+set.seed(35); y = x + rnorm(30, 5 , 4)
+
+# Run the t-test function using this package
+ans3 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = TRUE)
+
+# Plot Method 
+print(ans3)
+plot(ans3)
 ```
 
 
-#### Print the Output
-```{r printing}
-class(obj)
-print(obj)
-s3_dispatch( print(obj) ) # Note the dispatch
-```
-
-
-#### Plot the Output
-```{r plots}
-plot(obj)
-s3_dispatch( plot(obj) ) # Note the dispatch
-```

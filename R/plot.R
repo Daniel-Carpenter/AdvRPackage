@@ -1,6 +1,3 @@
-# Packages
-library(ggplot2)
-
 #' Plot Method for Rttest Objects
 #'
 #' This function creates a generic method for Ploting Rttest objects. Uses ggplot2

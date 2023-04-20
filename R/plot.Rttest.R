@@ -1,6 +1,8 @@
 # Packages
 library(ggplot2)
 library(tidyr)
+library(dplyr)
+library(stringr)
 
 #' Plot Method for Rttest Objects
 #'
@@ -35,47 +37,65 @@ library(tidyr)
 plot.Rttest <- function(Rttest_obj) {
 
   # Return the plot of the two samples in the data
-  plot_boxplots <- Rttest_obj$data |>
+  df <- Rttest_obj$data |>
+
+    # Make a difference of samples field
+    dplyr::mutate(Difference_of_Samples = y - x) |>
 
     # Pivot the data so that we can color the data
     tidyr::pivot_longer(cols      = where(is.numeric), # pivot the sample values
                         names_to  = 'sampleNames',
                         values_to = 'sampleValues') |>
 
-    # Map variables to the plot
-    ggplot2::ggplot(ggplot2::aes(x     = sampleNames,
-                                 y     = sampleValues,
-                                 color = sampleNames,
-                                 fill  = sampleNames
-                                 )
-           ) +
+    # Clean up names for plots using factors
+    dplyr::mutate(sampleNames = as.factor(stringr::str_replace_all(sampleNames, '_', ' ')) )
 
-    # Create the boxplots
-    ggplot2::geom_boxplot(size  = 2/3,
-                          alpha = 1/10) +
 
-    # Change the colors and fill
-    ggplot2::scale_fill_brewer(type       = 'qual',
-                               palette    = "Set1",
-                               direction  = -1,
-                               aesthetics = c("color", "fill")
-                               ) +
 
-    # Labels on the plot
-    ggplot2::labs(title   = 'Distribution of Samples used in the T-Test',
-                  caption = '\nProduced with the `AdvRPackage` by Daniel Carpenter',
-                  x       = '\nCategory',
-                  y       = 'Samples\n'
-    ) +
+    # Create the plot ----------------------------------------------------------
 
-    # Using the package's ggplot2 theme seen in R/theme_ggplot.R
-    AdvRPackage::theme_ggplot()
+    plot_boxplots <- df |>
+
+      # Map variables to the plot
+      ggplot2::ggplot(ggplot2::aes(x     = sampleNames,
+                                   y     = sampleValues,
+                                   color = sampleNames,
+                                   fill  = sampleNames
+                                   )
+             ) +
+
+      ggplot2::geom_hline(yintercept = 0,
+                          linetype   = "longdash",
+                          color      = "grey10",
+                          linewidth  = 1/2,
+                          alpha      = 1/3) +
+
+      # Create the boxplots
+      ggplot2::geom_boxplot(size  = 2/3,
+                            alpha = 1/10) +
+
+      # Change the colors and fill
+      ggplot2::scale_fill_brewer(type       = 'qual',
+                                 palette    = "Set1",
+                                 direction  = -1,
+                                 aesthetics = c("color", "fill")
+                                 ) +
+
+      # Labels on the plot
+      ggplot2::labs(title   = 'Distribution of Samples used in the T-Test',
+                    caption = '\nProduced with the `AdvRPackage` by Daniel Carpenter',
+                    x       = '\nCategory',
+                    y       = 'Samples\n'
+      ) +
+
+      # Using the package's ggplot2 theme seen in R/theme_ggplot.R
+      AdvRPackage::theme_ggplot()
 
 
 
   return( plot_boxplots ) # Return the boxplot plot
 }
-#
+
 # # X Variable
 # set.seed(21)
 # x <- rnorm(30,5,2)

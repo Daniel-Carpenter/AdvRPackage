@@ -6,9 +6,11 @@
 #'
 #' @param roundToDigits Number of digits to round the output to.
 #'
-#' @return A formatted table displaying the data from the Rttest object.
+#' @return 3 formatted tables displaying the 1 - alpha, confidence interval, and data from the Rttest object.
 #'
 #' @importFrom kableExtra kable
+#' @importFrom stringr    str_flatten
+#' @importFrom htmltools  HTML tagList
 #'
 #' @export
 #' @examples
@@ -22,9 +24,19 @@
 # Define the print method when calling print(~Rttest objects~)
 print.Rttest <- function(Rttest_obj, roundToDigits = 3) {
 
-  # Return Data in Kable Format. Note rounding of digits for ease of viewing
-  Rttest_obj$data |> kable(digits  = roundToDigits,
-                           caption = paste("Rttest Printed Data. Note rounded to",
-                                           roundToDigits, 'digits'),
-  )
+  #  1 - alpha
+  alpha = HTML(data.frame(Alpha = (1 - Rttest_obj$alpha) * 100) |> kable(digits = roundToDigits))
+
+  # confidence interval
+  ci = HTML(data.frame(Confidence_Interval = Rttest_obj$ci) |> kable(digits = roundToDigits))
+
+  # Data
+  data = HTML(Rttest_obj$data |> kable(digits = roundToDigits,
+                                       caption = "Rttest Data"))
+
+  # Combine all HTML outputs
+  htmlOutput <- tagList(alpha, ci, data)
+
+  return(htmlOutput)
+
 }

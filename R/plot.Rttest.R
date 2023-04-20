@@ -8,8 +8,9 @@
 #' @importFrom dplyr   mutate filter
 #' @importFrom tidyr   pivot_longer
 #' @importFrom stringr str_replace_all str_detect
-#' @importFrom ggplot2 ggplot aes geom_hline geom_boxplot scale_fill_brewer labs ggtitle theme element_blank
-#' @importFrom purrr   map
+#' @importFrom ggplot2 ggplot aes geom_hline geom_boxplot scale_fill_brewer labs ggtitle theme element_blank annotate
+#' @importFrom purrr   map map2
+#' @importFrom stats   t.test
 #'
 #' @export
 #'
@@ -118,13 +119,45 @@ plot.Rttest <- function(Rttest_obj) {
   outputPlots[['boxplots_distributions']] = plot_dist
 
 
+
   # Create the paired differences plot -----------------------------------------
 
   if (testTypeIsPaired) {
-    plot_diff <- df |>
+
+
+    df_diff <- df |>
 
       # ONLY include differences data
-      filter( str_detect(df$sampleNames, 'Difference') ) |>
+      filter( str_detect(df$sampleNames, 'Difference') )
+
+
+
+    ## Confidence interval data ------------------------------------------------
+
+    ### Bounds for labeling
+    bounds = paste(c('Lower', 'Upper'),  'CI:')
+
+    ### CI of differences data
+    ci_diff = t.test(df_diff$sampleValues)[['conf.int']]
+
+
+    ### Function to label ONE of the confidence intervals
+    getCIText <- function(minOrMaxBound, boundName) {
+
+        # Label for the confidence interval
+        annotate('text',
+                 y     = minOrMaxBound,
+                 x     = unique(df_diff$sampleNames),
+                 label = paste( boundName, round(minOrMaxBound, 2) ),
+                 color = 'grey40',
+                 size  = 3.5)
+    }
+
+
+
+    ## Create the plot ---------------------------------------------------------
+
+    plot_diff <- df_diff |>
 
       # Map variables to the plot
       ggplot(mapping = getMapping() ) +
@@ -139,6 +172,9 @@ plot.Rttest <- function(Rttest_obj) {
       # Get shared layers for better OOP approach
       addSharedLayers('Distribution of Samples used in the T-Test',
                       thePalette = 'Set2') +
+
+      # Add labels for the confidence intervals using purrr
+      map2( .x = ci_diff, .y = bounds, .f = getCIText) +
 
       # Do not show a legend now
       theme(legend.position = 'none',
@@ -167,4 +203,4 @@ plot.Rttest <- function(Rttest_obj) {
 # obj <- myttest(x = x, y = y, alpha = 0.05, paired = T)
 #
 # # Plot the sample Rttest
-# plot(obj)
+# print(obj)

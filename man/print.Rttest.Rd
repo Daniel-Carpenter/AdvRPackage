@@ -12,7 +12,7 @@
 \item{roundToDigits}{Number of digits to round the output to.}
 }
 \value{
-A formatted table displaying the data from the Rttest object.
+3 formatted tables displaying the 1 - alpha, confidence interval, and data from the Rttest object.
 }
 \description{
 This function defines the print method for Rttest objects. It extracts the data from the object and

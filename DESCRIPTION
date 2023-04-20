@@ -18,5 +18,6 @@ Imports:
     tidyr,
     dplyr,
     stringr,
-    purrr
+    purrr,
+    htmltools
 RoxygenNote: 7.2.3

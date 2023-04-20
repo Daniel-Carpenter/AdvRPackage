@@ -1,4 +1,5 @@
 ---
+title:    'AdvRPackage'
 author:   "Author: Daniel Carpenter"
 date:     "`r format(Sys.Date(), '%B %d, %Y')`"
 output: 
@@ -7,7 +8,7 @@ output:
     toc_depth: 4
   # html_document:
   #   toc: yes
-  #   toc_float: yes    
+  #   toc_float: yes
   #   toc_depth: 3
   #   theme: yeti
   #   fig_width: 7
@@ -35,7 +36,7 @@ knitr::opts_chunk$set(
 
 ## Installation
 
-You can install the development version of `AdvRPackage` from [GitHub](https://github.com/) with:
+You can install the development version of `AdvRPackage` from [GitHub](https://github.com/Daniel-Carpenter/AdvRPackage.git) with:
 
 ``` r
 # install.packages("devtools")
@@ -43,7 +44,50 @@ devtools::install_github("Daniel-Carpenter/AdvRPackage")
 ```
 
 
-## Examples
+## Installment 4 Requirements
+
+### Load Package
+```{r loadPackage_I4}
+library(AdvRPackage) # My package: https://github.com/Daniel-Carpenter/AdvRPackage
+```
+
+### Printed Functions
+```{r funs} 
+# Print function
+print(AdvRPackage::myttest)
+
+# Print function
+print(AdvRPackage::print)
+
+# Plot function
+print(AdvRPackage::plot)
+```
+
+
+<br>
+
+### Run the code for Installment 4
+```{r code_I4}
+# Create sample data
+set.seed(21); x <- rnorm(30, 5, 2); 
+set.seed(23); y <- rnorm(30, 3, 2); alpha <- 0.05
+
+# Run the t-test function using this package
+obj <- AdvRPackage::myttest(x = x, y = y, alpha = 0.05)
+
+# Print Method 
+print(obj)
+```
+
+```{r}
+plot(obj)
+```
+
+
+<br>
+
+## Examples (For Final Package)
+> Note that this section may not be required for Installment 4, but is required for the final installment
 
 ### Load Package
 ```{r loadPackage}
@@ -69,7 +113,9 @@ ans1 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = FALSE)
 
 # Print Method 
 print(ans1)
+```
 
+```{r}
 # Plot Method 
 plot(ans1)
 ```
@@ -94,7 +140,9 @@ ans2 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = FALSE)
 
 # Print Method 
 print(ans2)
+```
 
+```{r}
 # Plot Method 
 plot(ans2)
 ```
@@ -117,8 +165,12 @@ set.seed(35); y = x + rnorm(30, 5 , 4)
 # Run the t-test function using this package
 ans3 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = TRUE)
 
-# Plot Method 
+# Print Method
 print(ans3)
+```
+
+```{r}
+# Plot Method 
 plot(ans3)
 ```
 

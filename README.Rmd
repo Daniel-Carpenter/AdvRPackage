@@ -15,8 +15,6 @@ output:
   #   fig_height: 5
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -29,12 +27,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# `AdvRPackage`
-
-<!-- badges: start -->
-<!-- badges: end -->
-
-## Installation
+# Installation
 
 You can install the development version of `AdvRPackage` from [GitHub](https://github.com/Daniel-Carpenter/AdvRPackage.git) with:
 
@@ -43,53 +36,13 @@ You can install the development version of `AdvRPackage` from [GitHub](https://g
 devtools::install_github("Daniel-Carpenter/AdvRPackage")
 ```
 
+# Examples (For Final Package)
+> Note that this section may not be required for Installment 4, but is required for the final installment  
 
-## Installment 4 Requirements
-
-### Load Package
-```{r loadPackage_I4}
-library(AdvRPackage) # My package: https://github.com/Daniel-Carpenter/AdvRPackage
-```
-
-### Printed Functions
-```{r funs} 
-# Print function
-print(AdvRPackage::myttest)
-
-# Print function
-print(AdvRPackage::print)
-
-# Plot function
-print(AdvRPackage::plot)
-```
+> For long-form (*very detailed*) examples, run `vignette("intro-to-package", package = 'AdvRPackage')` after installing the package.  
 
 
-<br>
-
-### Run the code for Installment 4
-```{r code_I4}
-# Create sample data
-set.seed(21); x <- rnorm(30, 5, 2); 
-set.seed(23); y <- rnorm(30, 3, 2); alpha <- 0.05
-
-# Run the t-test function using this package
-obj <- AdvRPackage::myttest(x = x, y = y, alpha = 0.05)
-
-# Print Method 
-print(obj)
-```
-
-```{r}
-plot(obj)
-```
-
-
-<br>
-
-## Examples (For Final Package)
-> Note that this section may not be required for Installment 4, but is required for the final installment
-
-### Load Package
+## Load Package
 ```{r loadPackage}
 library(AdvRPackage) # My package: https://github.com/Daniel-Carpenter/AdvRPackage
 ```
@@ -98,7 +51,7 @@ library(AdvRPackage) # My package: https://github.com/Daniel-Carpenter/AdvRPacka
 
 ---
 
-### Test `1` - Default T-Test
+## Test `1` - Default T-Test
 
 * Notice the *non*-disparate distributions. The program will detect *equal* variances
 and use a `Default` T-Test.
@@ -125,7 +78,7 @@ plot(ans1)
 
 ---
 
-### Test `2` - Welch T-Test
+## Test `2` - Welch T-Test
 
 * Notice the *disparate* distributions. The program will detect *non*-equal variances
 and use a `Welch` T-Test.
@@ -152,7 +105,7 @@ plot(ans2)
 
 ---
 
-### Test `3` - Paired T-Test
+## Test `3` - Paired T-Test
 
 * Notice that when a `Paired` T-Test is detected, it will plot the distribution 
 of sample differences

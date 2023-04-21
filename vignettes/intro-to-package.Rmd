@@ -1,0 +1,155 @@
+---
+title:    'Introduction to AdvRPackage'
+author:   "Daniel Carpenter"
+date:     "`r format(Sys.Date(), '%B %d, %Y')`"
+output: 
+  rmarkdown::html_vignette:
+    toc: yes
+    toc_depth: 3
+    fig_width: 7
+    fig_height: 5
+vignette: >
+  %\VignetteIndexEntry{Introduction to AdvRPackage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "../man/figures/README-",
+  out.width = "100%",
+  echo    = TRUE, # Default only show output (not code)
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+> In the vignette, we demonstrate the usage of the `AdvRPackage` developed by Daniel Carpenter. This package provides an advanced T-Test function for R users. The package can be installed from GitHub using the `devtools` package.
+
+# Installation
+
+You can install the development version of `AdvRPackage` from [GitHub](https://github.com/Daniel-Carpenter/AdvRPackage.git) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Daniel-Carpenter/AdvRPackage")
+```
+
+
+<br>
+
+# Usage
+
+In the following examples, we demonstrate how to use the `myttest` function for different scenarios.
+
+## Load Package
+
+First, load the `AdvRPackage` package:
+
+```{r loadPackage}
+library(AdvRPackage) # Seen at: https://github.com/Daniel-Carpenter/AdvRPackage
+```
+
+Now, let's use the `myttest()` function to perform various types of T-Tests. 
+
+## *Default* T-Test
+
+For two groups with *equal* variances, the function will perform a *default* T-Test. Users can create sample data, run the T-Test function using the package, and `print` the results. The corresponding plot can also be displayed with the `plot` function.
+
+First, create some random data that has *similar* variances.
+
+```{r}
+# Create sample data
+set.seed(32); x = rnorm(30, mean = 10, sd = 15)
+set.seed(35); y = rnorm(30, mean = 8, sd = 15)
+
+# Run the T-Test function using this package and creating a Rttest object
+ans1 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = FALSE)
+```
+
+To print the `Rttest` object, use the `print()` function. You will find the confidence level, interval, and original sample data used:
+
+```{r}
+# Print Method 
+print(ans1)
+```
+
+To plot the `Rttest` object, use the `plot()` function:
+
+In the plot, you can notice the *non*-disparate distributions. The program will detect *equal* variances and use a *Default* T-Test.
+
+```{r}
+# Plot Method 
+plot(ans1)
+```
+
+
+<br>
+
+## *Welch* T-Test
+
+For two groups with *unequal* variances, the function will perform a *Welch* T-Test. The process is similar to the *Default* T-Test, with the only difference being the data generated to have *unequal* variances.
+
+First, create some random data that has *unequal* variances.
+
+```{r}
+# Create sample data
+set.seed(32); x = rnorm(30, mean = 10, sd = 5)
+set.seed(35); y = rnorm(30, mean = 8, sd = 15)
+
+# Run the T-Test function using this package and creating a Rttest object
+ans2 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = FALSE)
+```
+
+To print the `Rttest` object, use the `print()` function as seen before. You will find the confidence level, interval, and original sample data used:
+
+```{r}
+# Print Method 
+print(ans2)
+```
+
+To plot the `Rttest` object, use the `plot()` function as seen before:
+
+In the plot, you can notice the *disparate* distributions. The program will detect *non*-equal variances and use a *Welch* T-Test.
+
+```{r}
+# Plot Method 
+plot(ans2)
+```
+
+
+<br>
+
+## *Paired* T-Test
+
+For *paired* data, the function will perform a *paired* T-Test. To run the *paired* T-Test, users need to set the `paired` parameter to `TRUE.` Using the `plot()` function, you can plot the distribution of sample differences too.
+
+First, create some random data:
+
+```{r}
+# Create sample data
+set.seed(32); x = rnorm(30, mean = 10, sd = 15)
+set.seed(35); y = x + rnorm(30, 5 , 4)
+
+# Run the T-Test function using this package and creating a Rttest object
+ans3 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = TRUE)
+```
+
+To print the `Rttest` object, use the `print()` function as seen before. You will find the confidence level, interval, and original sample data used:
+
+```{r}
+# Print Method
+print(ans3)
+```
+
+To plot the `Rttest` object, use the `plot()` function as seen before:
+
+In the plot, you can notice that when a *Paired* T-Test is detected, it will plot the distribution of sample differences and the associated confidence interval based on the `alpha` parameters in the `Rttest` object.
+
+```{r}
+# Plot Method 
+plot(ans3)
+```

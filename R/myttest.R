@@ -64,17 +64,17 @@ myttest <- function(x, y, alpha = 0.05, paired = FALSE) {
     ## 1.1 If paired in paraeters, then paired
     if (paired) {
       testType     <- 'Paired'
-      tTestResults <- t.test(x, y, paired = TRUE)
+      tTestResults <- t.test(x, y, paired = TRUE, conf.level = 1 - alpha)
 
       ## 1.2 Else If variances are not equal then use Welch's T-Test
     } else if (variancesNotEqual) {
       testType     <- 'Welch'
-      tTestResults <- t.test(x, y, var.equal = FALSE)
+      tTestResults <- t.test(x, y, var.equal = FALSE, conf.level = 1 - alpha)
 
       ## 1.3 Else variances are equal and not using a paired ttest, so use standard
     } else {
       testType     <- 'T-test'
-      tTestResults <- t.test(x, y, var.equal = TRUE)
+      tTestResults <- t.test(x, y, var.equal = TRUE, conf.level = 1 - alpha)
     }
 
     # Determine if the null hypothesis is rejected based on the p-value

@@ -1,7 +1,7 @@
 AdvRPackage
 ================
 Author: Daniel Carpenter
-April 21, 2023
+April 22, 2023
 
 - <a href="#installation" id="toc-installation">Installation</a>
 - <a href="#examples-for-final-package"
@@ -63,15 +63,29 @@ print(ans1)
 <table>
  <thead>
   <tr>
-   <th style="text-align:right;"> Alpha </th>
+   <th style="text-align:left;"> Test_Type </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 95 </td>
+   <td style="text-align:left;"> T-test </td>
   </tr>
 </tbody>
 </table>
+<br/>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Confidence_Level </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 95% </td>
+  </tr>
+</tbody>
+</table>
+<br/>
 <table>
  <thead>
   <tr>
@@ -87,6 +101,33 @@ print(ans1)
   </tr>
 </tbody>
 </table>
+<br/>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> P_Value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 0.824987 </td>
+  </tr>
+</tbody>
+</table>
+<br/>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Reject_Null </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> N </td>
+  </tr>
+</tbody>
+</table>
+<br/>
 <table>
 <caption>Rttest Data</caption>
  <thead>
@@ -251,15 +292,29 @@ print(ans2)
 <table>
  <thead>
   <tr>
-   <th style="text-align:right;"> Alpha </th>
+   <th style="text-align:left;"> Test_Type </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 95 </td>
+   <td style="text-align:left;"> Welch </td>
   </tr>
 </tbody>
 </table>
+<br/>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Confidence_Level </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 95% </td>
+  </tr>
+</tbody>
+</table>
+<br/>
 <table>
  <thead>
   <tr>
@@ -275,6 +330,33 @@ print(ans2)
   </tr>
 </tbody>
 </table>
+<br/>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> P_Value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 0.340561 </td>
+  </tr>
+</tbody>
+</table>
+<br/>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Reject_Null </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> N </td>
+  </tr>
+</tbody>
+</table>
+<br/>
 <table>
 <caption>Rttest Data</caption>
  <thead>
@@ -439,15 +521,29 @@ print(ans3)
 <table>
  <thead>
   <tr>
-   <th style="text-align:right;"> Alpha </th>
+   <th style="text-align:left;"> Test_Type </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 95 </td>
+   <td style="text-align:left;"> Paired </td>
   </tr>
 </tbody>
 </table>
+<br/>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Confidence_Level </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 95% </td>
+  </tr>
+</tbody>
+</table>
+<br/>
 <table>
  <thead>
   <tr>
@@ -463,6 +559,33 @@ print(ans3)
   </tr>
 </tbody>
 </table>
+<br/>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> P_Value </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
+<br/>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Reject_Null </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Y </td>
+  </tr>
+</tbody>
+</table>
+<br/>
 <table>
 <caption>Rttest Data</caption>
  <thead>

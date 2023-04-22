@@ -20,7 +20,6 @@ devtools::check()
 
     ## ℹ Updating AdvRPackage documentation
     ## ℹ Loading AdvRPackage
-    ## Writing 'NAMESPACE'
 
     ## 
     ## ══ Building ════════════════════════════════════════════════════════════════════
@@ -48,7 +47,7 @@ devtools::check()
     ## • _R_CHECK_FORCE_SUGGESTS_      : FALSE
     ## • NOT_CRAN                      : true
     ## ── R CMD check ─────────────────────────────────────────────────────────────────
-    ## * using log directory 'C:/Users/daniel.carpenter/AppData/Local/Temp/Rtmp6D5d3h/AdvRPackage.Rcheck'
+    ## * using log directory 'C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpaKgrHc/AdvRPackage.Rcheck'
     ## * using R version 4.2.3 (2023-03-15 ucrt)
     ## * using platform: x86_64-w64-mingw32 (64-bit)
     ## * using session charset: UTF-8
@@ -72,8 +71,8 @@ devtools::check()
     ## * checking 'build' directory ... OK
     ## * checking DESCRIPTION meta-information ... OK
     ## * checking top-level files ... NOTE
-    ## Non-standard file/directory found at top level:
-    ##   'dev'
+    ## Non-standard files/directories found at top level:
+    ##   'dev' 'shiny-example'
     ## * checking for left-over files ... OK
     ## * checking index information ... OK
     ## * checking package subdirectories ... OK
@@ -121,15 +120,15 @@ devtools::check()
     ## 
     ## Status: 2 NOTEs
     ## See
-    ##   'C:/Users/daniel.carpenter/AppData/Local/Temp/Rtmp6D5d3h/AdvRPackage.Rcheck/00check.log'
+    ##   'C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpaKgrHc/AdvRPackage.Rcheck/00check.log'
     ## for details.
 
     ## ── R CMD check results ────────────────────────────────── AdvRPackage 0.1.0 ────
-    ## Duration: 1m 3.4s
+    ## Duration: 1m 3.7s
     ## 
     ## ❯ checking top-level files ... NOTE
-    ##   Non-standard file/directory found at top level:
-    ##     'dev'
+    ##   Non-standard files/directories found at top level:
+    ##     'dev' 'shiny-example'
     ## 
     ## ❯ checking R code for possible problems ... NOTE
     ##   plot.Rttest: no visible binding for global variable 'y'
@@ -179,7 +178,7 @@ devtools::install(build_vignettes = TRUE, upgrade = 'never')
     ## * building 'AdvRPackage_0.1.0.tar.gz'
     ## 
     ## Running "C:/PROGRA~1/R/R-42~1.3/bin/x64/Rcmd.exe" INSTALL \
-    ##   "C:\Users\DANIEL~1.CAR\AppData\Local\Temp\Rtmp6D5d3h/AdvRPackage_0.1.0.tar.gz" \
+    ##   "C:\Users\DANIEL~1.CAR\AppData\Local\Temp\RtmpaKgrHc/AdvRPackage_0.1.0.tar.gz" \
     ##   --install-tests 
     ## * installing to library 'C:/Users/daniel.carpenter/AppData/Local/R/win-library/4.2'
     ## * installing *source* package 'AdvRPackage' ...
@@ -221,5 +220,7 @@ vignette(vignetteName, package = packageName)
 ``` r
 ?AdvRPackage::myttest
 ?AdvRPackage::print
+?AdvRPackage::print.Rttest
 ?AdvRPackage::plot
+?AdvRPackage::plot.Rttest
 ```

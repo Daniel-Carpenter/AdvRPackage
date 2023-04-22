@@ -14,8 +14,10 @@
 #'
 #' @export
 #'
-#' @examples
+#' @seealso \code{\link{myttest}}
+#' @seealso \code{\link{plot}}
 #'
+#' @examples
 #' # Create a sample Rttest object
 #' # X Variable
 #' set.seed(21)

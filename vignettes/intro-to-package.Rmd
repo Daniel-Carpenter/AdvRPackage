@@ -70,7 +70,7 @@ set.seed(35); y = rnorm(30, mean = 8, sd = 15)
 ans1 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = FALSE)
 ```
 
-To print the `Rttest` object, use the `print()` function. You will find the confidence level, interval, and original sample data used:
+To print the `Rttest` object, use the `print()` function. You will find helpful summary statistics and parameters in HTML output:
 
 ```{r}
 # Print Method 
@@ -104,7 +104,7 @@ set.seed(35); y = rnorm(30, mean = 8, sd = 15)
 ans2 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = FALSE)
 ```
 
-To print the `Rttest` object, use the `print()` function as seen before. You will find the confidence level, interval, and original sample data used:
+To print the `Rttest` object, use the `print()` function as seen before. You will find helpful summary statistics and parameters in HTML output:
 
 ```{r}
 # Print Method 
@@ -138,7 +138,7 @@ set.seed(35); y = x + rnorm(30, 5 , 4)
 ans3 = AdvRPackage::myttest(x, y, alpha = 0.05, paired = TRUE)
 ```
 
-To print the `Rttest` object, use the `print()` function as seen before. You will find the confidence level, interval, and original sample data used:
+To print the `Rttest` object, use the `print()` function as seen before. You will find helpful summary statistics and parameters in HTML output:
 
 ```{r}
 # Print Method

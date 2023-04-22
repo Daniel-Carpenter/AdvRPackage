@@ -9,22 +9,22 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Do this everytime you make a change
-```{r packages}
+Do this every time you make a change
+```{r loading}
 library(devtools)
 ```
 
-```{r check}
+```{r checking}
 # Ensure there are no errors
 devtools::check()
 ```
 
-```{r build}
+```{r building}
 # Build the package
 devtools::build()
 ```
 
-```{r install}
+```{r installing}
 # install the package and build the vignette
 devtools::install(build_vignettes = TRUE, upgrade = 'never')
 ```
@@ -37,8 +37,10 @@ vignetteName = "intro-to-package"
 vignette(vignetteName, package = packageName)
 ```
 
-```{r}
+```{r viewDocumentation}
 ?AdvRPackage::myttest
 ?AdvRPackage::print
+?AdvRPackage::print.Rttest
 ?AdvRPackage::plot
+?AdvRPackage::plot.Rttest
 ```

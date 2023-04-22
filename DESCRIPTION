@@ -6,7 +6,9 @@ Author@R: person("Daniel", "Carpenter", email = "danielcarpenter@ou.edu",
                   role = c("aut", "cre") )
 Author: Daniel Carpenter [aut, cre]
 Maintainer: Daniel Carpenter <danielcarpenter@ou.edu>
-Description: This package is for Advanced R's Package for a T-Test. It can dynamically handle samples with equal and unequal variances. It can also handled paired data.
+Description: This package is for Advanced R's Package for a T-Test. 
+  It can dynamically handle samples with equal and unequal variances. 
+  It can also handled paired data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

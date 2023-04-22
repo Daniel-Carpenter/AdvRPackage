@@ -1,6 +1,6 @@
 # Libraries ----
 library(shiny)
-library(shinyWidgets)
+library(shinyWidgets) # Helpful for coloring action sliders
 library(shinydashboard)
 library(shinyjs)
 library(tidyverse)
@@ -16,9 +16,8 @@ library(AdvRPackage) # https://github.com/Daniel-Carpenter/AdvRPackage.git
 # source https://stackoverflow.com/questions/45016826/change-color-in-shinydashboard
 
 # Create a theme
+# Use here: dashboardBody(use_theme(themeUI))
 themeUI <- create_theme(
-
-  # Use here: dashboardBody(use_theme(themeUI))
 
   # Top Ribbon
   adminlte_color(
@@ -140,7 +139,7 @@ server <- function(input, output, session) {
   # Create the printed output
   output$tTestPrint <- renderText({
     req(tTestResult()) # Ensure the print is only refreshed when tTestResult is available
-    paste0(br(),'Printed Data', br(), tags$span(style="color:#444444;", print(tTestResult())))
+    paste0(br(),'Printed Data', br(), tags$span(style = "color:#444444;", print(tTestResult())))
   })
 
   # Reset button

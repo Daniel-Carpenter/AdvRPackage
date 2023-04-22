@@ -9,7 +9,7 @@
 #'
 #' @importFrom kableExtra kable
 #' @importFrom stringr    str_flatten
-#' @importFrom htmltools  HTML tagList
+#' @importFrom htmltools  HTML tagList br
 #'
 #' @export
 #'

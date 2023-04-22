@@ -16,7 +16,6 @@ The result of the specific Plot method for the class of the input object.
 This function creates a generic method for Ploting Rttest objects. Uses ggplot2
 }
 \examples{
-
 # Create a sample Rttest object
 # X Variable
 set.seed(21)
@@ -34,4 +33,9 @@ obj <- myttest(x = x, y = y, alpha = 0.05)
 
 # Plot the sample Rttest
 plot(obj)
+}
+\seealso{
+\code{\link{myttest}}
+
+\code{\link{plot}}
 }

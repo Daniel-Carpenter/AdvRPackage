@@ -1,0 +1,44 @@
+---
+title: "Check and Build Package"
+author: "Daniel Carpenter"
+date: "`r Sys.Date()`"
+output: github_document  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Do this everytime you make a change
+```{r packages}
+library(devtools)
+```
+
+```{r check}
+# Ensure there are no errors
+devtools::check()
+```
+
+```{r build}
+# Build the package
+devtools::build()
+```
+
+```{r install}
+# install the package and build the vignette
+devtools::install(build_vignettes = TRUE, upgrade = 'never')
+```
+
+```{r viewVignette}
+# view the vignette
+packageName  = "AdvRPackage"
+vignetteName = "intro-to-package"
+
+vignette(vignetteName, package = packageName)
+```
+
+```{r}
+?AdvRPackage::myttest
+?AdvRPackage::print
+?AdvRPackage::plot
+```

@@ -1,5 +1,6 @@
 # Libraries ----
 library(shiny)
+library(shinyWidgets)
 library(shinydashboard)
 library(shinyjs)
 library(tidyverse)
@@ -69,7 +70,7 @@ ui <- dashboardPage(
     numericInput("inputSD_x", "Standard Deviation of x:", value = 15, step = 5, min = 0),
 
     # Input Mean y
-    numericInput("inputMean_y", "Mean of y:", value = 8, step = 5),
+    numericInput("inputMean_y", "Mean of y:", value = 20, step = 5),
 
     # Input SD y
     numericInput("inputSD_y", "Standard Deviation of y:", value = 15, step = 5, min = 0),
@@ -78,10 +79,19 @@ ui <- dashboardPage(
     checkboxInput("inputPaired", "Use Paired T-Test?", value = FALSE),
 
     # Input Alpha
-    numericInput("inputAlpha", "Alpha:", value = 0.05, step = 0.01, max = 0.1, min = 0.01),
+    setSliderColor('#BECDE0', sliderId = 1),
+    sliderInput("inputAlpha", "Set Alpha for Confidence Level:", min = 0.01, max = 0.1, value = 0.05, step = 0.01,
+                width     = "100%", # Set slider width to 100%
+                round     = TRUE, # Round slider values to integer
+                dragRange = TRUE, # Allow to drag slider range
+                ticks     = FALSE # Show ticks
+    ),
 
-    # Input Seed
-    numericInput("inputSeed", "Seed for Random Data Creation:", value = 2023, step = 5)
+    # Input Seedz
+    numericInput("inputSeed", "Set Seed for Random Data Creation:", value = 2023),
+
+    # Add reset button
+    actionButton("resetBtn", "Reset Inputs", icon = icon("undo"))
 
     # # Refresh button - uncomment if wanted
     # actionButton("resfreshPlot", "Refresh Output")
@@ -101,7 +111,7 @@ ui <- dashboardPage(
 # Server
 # ===============================================================================
 
-server <- function(input, output) {
+server <- function(input, output, session) {
 
   # Process the t-test result
   tTestResult <- reactive({
@@ -130,7 +140,19 @@ server <- function(input, output) {
   # Create the printed output
   output$tTestPrint <- renderText({
     req(tTestResult()) # Ensure the print is only refreshed when tTestResult is available
-    paste0(br(),'Printed Data', br(), print(tTestResult()))
+    paste0(br(),'Printed Data', br(), tags$span(style="color:#444444;", print(tTestResult())))
+  })
+
+  # Reset button
+  observeEvent(input$resetBtn, {
+    updateNumericInput(session, "inputLengthOfData", value = 25)
+    updateNumericInput(session, "inputMean_x",       value = 10)
+    updateNumericInput(session, "inputSD_x",         value = 15)
+    updateNumericInput(session, "inputMean_y",       value = 20)
+    updateNumericInput(session, "inputSD_y",         value = 15)
+    updateCheckboxInput(session, "inputPaired",      value = FALSE)
+    updateNumericInput(session, "inputAlpha",        value = 0.05)
+    updateNumericInput(session, "inputSeed",         value = 2023)
   })
 }
 

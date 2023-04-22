@@ -90,9 +90,9 @@ plot.Rttest <- function(Rttest_obj) {
 
           # Labels on the plot
           labs(title   = paste0(..., '\nTest Type: ', Rttest_obj$testType),
-               caption = '\nProduced with the `AdvRPackage` Package by Daniel Carpenter',
-               x       = '\nCategory',
-               y       = 'Samples\n'
+               caption = 'Produced with the `AdvRPackage` Package by Daniel Carpenter',
+               x       = 'Category',
+               y       = 'Samples'
           ),
 
           # Using the package's ggplot2 theme seen in R/theme_ggplot.R

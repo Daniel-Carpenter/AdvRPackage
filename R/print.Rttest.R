@@ -38,18 +38,28 @@
 # Define the print method when calling print(~Rttest objects~)
 print.Rttest <- function(Rttest_obj, roundToDigits = 3) {
 
-  #  1 - alpha
-  alpha = HTML(data.frame(Alpha = (1 - Rttest_obj$alpha) * 100) |> kable(digits = roundToDigits))
+  # Return a HTML tag list for HTML output
+  return(
+    tagList(
 
-  # confidence interval
-  ci = HTML(data.frame(Confidence_Interval = Rttest_obj$ci) |> kable(digits = roundToDigits))
+      # Test type name
+      HTML(data.frame(Test_Type = Rttest_obj$testType) |> kable()), br(),
 
-  # Data
-  data = HTML(Rttest_obj$data |> kable(digits = roundToDigits,
-                                       caption = "Rttest Data"))
+      #  1 - alpha
+      HTML(data.frame(Confidence_Level = paste0((1 - Rttest_obj$alpha) * 100, '%') ) |> kable()), br(),
 
-  # Combine all HTML outputs
-  htmlOutput <- tagList(alpha, ci, data)
+      # confidence interval
+      HTML(data.frame(Confidence_Interval = Rttest_obj$ci) |> kable(digits = roundToDigits)), br(),
 
-  return(htmlOutput)
+      # P value
+      HTML(data.frame(P_Value = Rttest_obj$pValue) |> kable(digits = roundToDigits + 3)), br(),
+
+      # Reject null hypothesis?
+      HTML(data.frame(Reject_Null = Rttest_obj$rejectNull) |> kable()), br(),
+
+      # Data
+      HTML(Rttest_obj$data |> kable(digits = roundToDigits,
+                                    caption = "Rttest Data"))
+    )
+  )
 }

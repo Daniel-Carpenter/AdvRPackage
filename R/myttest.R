@@ -13,6 +13,9 @@
 #'
 #' @export myttest
 #'
+#' @seealso \code{\link{print.Rttest}}
+#' @seealso \code{\link{plot.Rttest}}
+#'
 #' @examples
 #' # X Variable
 #' set.seed(21)
@@ -26,10 +29,9 @@
 #' alpha <- 0.05
 #'
 #' # Call the contructor
-#' obj <- myttest(x = x, y = y, alpha = 0.05)
+#' Rttest_obj <- myttest(x = x, y = y, alpha = 0.05)
 #'
-#' # Print object
-#' print(obj)
+#' Rttest_obj # Display the contents (note better displaying is print or plot method)
 
 
 # Create the constructor

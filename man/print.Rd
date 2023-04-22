@@ -7,7 +7,7 @@
 print(Rttest_obj, roundToDigits = 3)
 }
 \arguments{
-\item{Rttest_obj}{An object of class Rttest.}
+\item{Rttest_obj}{An object of class Rttest created with the myttest method.}
 
 \item{roundToDigits}{The number of decimal places to round the data values to (default: 3).}
 }
@@ -20,4 +20,6 @@ of the data values by specifying the number of digits to round to.
 }
 \seealso{
 \code{\link{print.Rttest}}
+
+\code{\link{myttest}}
 }

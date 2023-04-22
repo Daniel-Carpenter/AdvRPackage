@@ -13,10 +13,16 @@ a theme via a list of geoms that can be added to ggplot2 objects
 Creates a custom theme for reuse in this package
 }
 \examples{
-
 library(ggplot2)
 
 mtcars |>
   ggplot(aes(x=wt, y=mpg)) + geom_point() +
   theme_ggplot()
+}
+\seealso{
+\code{\link{myttest}}
+
+\code{\link{plot}}
+
+\code{\link{plot.Rttest}}
 }

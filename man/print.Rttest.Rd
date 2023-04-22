@@ -7,7 +7,7 @@
 \method{print}{Rttest}(Rttest_obj, roundToDigits = 3)
 }
 \arguments{
-\item{Rttest_obj}{An object of class Rttest.}
+\item{Rttest_obj}{An object of class Rttest created with the myttest method.}
 
 \item{roundToDigits}{Number of digits to round the output to.}
 }
@@ -19,10 +19,25 @@ This function defines the print method for Rttest objects. It extracts the data 
 prints it in a readable format using the kable function from the knitr package.
 }
 \examples{
-# Create a sample Rttest object
-sample_data <- data.frame(a = 1:5, b = 6:10)
-sample_Rttest_obj <- list(data = sample_data, class = "Rttest")
+# X Variable
+set.seed(21)
+x <- rnorm(30,5,2)
 
-# Print the sample Rttest object
-print(sample_Rttest_obj)
+# Y Variable
+set.seed(23)
+y <- rnorm(30, 3,2)
+
+# Alpha level
+alpha <- 0.05
+
+# Call the contructor
+Rttest_obj <- myttest(x = x, y = y, alpha = 0.05)
+
+# Print the Rttest object
+print(Rttest_obj)
+}
+\seealso{
+\code{\link{myttest}}
+
+\code{\link{plot.Rttest}}
 }

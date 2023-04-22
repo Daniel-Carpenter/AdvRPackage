@@ -5,10 +5,13 @@
 #'
 #' @importFrom ggplot2 theme_minimal theme element_text element_blank
 #'
-#' @export
+#' @export theme_ggplot
+#'
+#' @seealso \code{\link{myttest}}
+#' @seealso \code{\link{plot}}
+#' @seealso \code{\link{plot.Rttest}}
 #'
 #' @examples
-#'
 #' library(ggplot2)
 #'
 #' mtcars |>

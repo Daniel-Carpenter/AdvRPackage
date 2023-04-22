@@ -12,7 +12,7 @@
 
 <meta name="author" content="Daniel Carpenter" />
 
-<meta name="date" content="2023-04-21" />
+<meta name="date" content="2023-04-22" />
 
 <title>Introduction to AdvRPackage</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Introduction to AdvRPackage</h1>
 <h4 class="author">Daniel Carpenter</h4>
-<h4 class="date">April 21, 2023</h4>
+<h4 class="date">April 22, 2023</h4>
 
 
 <div id="TOC">
@@ -404,165 +404,73 @@ variances.</p>
 function. You will find the confidence level, interval, and original
 sample data used:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print Method </span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ans1)</span></code></pre></div>
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> Alpha </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 95 </td>
-  </tr>
-</tbody>
-</table>
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> Confidence_Interval </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> -7.623 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 6.100 </td>
-  </tr>
-</tbody>
-</table>
-<table>
-<caption>Rttest Data</caption>
- <thead>
-  <tr>
-   <th style="text-align:right;"> x </th>
-   <th style="text-align:right;"> y </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 10.220 </td>
-   <td style="text-align:right;"> 23.977 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 23.099 </td>
-   <td style="text-align:right;"> 9.993 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> -5.419 </td>
-   <td style="text-align:right;"> 7.489 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 20.285 </td>
-   <td style="text-align:right;"> 7.325 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 16.742 </td>
-   <td style="text-align:right;"> 58.068 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 16.105 </td>
-   <td style="text-align:right;"> 2.106 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 14.271 </td>
-   <td style="text-align:right;"> 14.158 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 0.635 </td>
-   <td style="text-align:right;"> -0.433 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 22.595 </td>
-   <td style="text-align:right;"> 25.868 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 14.669 </td>
-   <td style="text-align:right;"> 13.236 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17.129 </td>
-   <td style="text-align:right;"> 15.673 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 8.499 </td>
-   <td style="text-align:right;"> 14.680 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 13.053 </td>
-   <td style="text-align:right;"> -3.526 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 8.588 </td>
-   <td style="text-align:right;"> 0.483 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 11.504 </td>
-   <td style="text-align:right;"> -20.629 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 5.977 </td>
-   <td style="text-align:right;"> -18.680 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 30.191 </td>
-   <td style="text-align:right;"> 20.964 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 7.803 </td>
-   <td style="text-align:right;"> 2.814 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 10.746 </td>
-   <td style="text-align:right;"> 35.574 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 22.506 </td>
-   <td style="text-align:right;"> 33.096 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 5.637 </td>
-   <td style="text-align:right;"> 18.264 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> -6.271 </td>
-   <td style="text-align:right;"> 22.354 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 24.090 </td>
-   <td style="text-align:right;"> 23.028 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 15.412 </td>
-   <td style="text-align:right;"> 27.144 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 21.105 </td>
-   <td style="text-align:right;"> 3.190 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 23.229 </td>
-   <td style="text-align:right;"> 16.677 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17.930 </td>
-   <td style="text-align:right;"> 15.307 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> -20.755 </td>
-   <td style="text-align:right;"> 16.293 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 24.733 </td>
-   <td style="text-align:right;"> 16.513 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17.102 </td>
-   <td style="text-align:right;"> 13.244 </td>
-  </tr>
-</tbody>
-</table>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ans1)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $data</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              x           y</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1   10.2196081  23.9768799</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   23.0993306   9.9932177</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3   -5.4191930   7.4893398</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4   20.2849694   7.3253548</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5   16.7415547  58.0675679</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6   16.1052646   2.1062371</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7   14.2709705  14.1584902</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8    0.6353591  -0.4327815</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9   22.5948402  25.8683998</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10  14.6691879  13.2360224</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11  17.1288021  15.6733114</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12   8.4986494  14.6801061</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13  13.0526878  -3.5257172</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14   8.5884746   0.4833640</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15  11.5035229 -20.6288073</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16   5.9765910 -18.6800779</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17  30.1908762  20.9637599</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18   7.8034886   2.8139316</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19  10.7464855  35.5739193</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20  22.5059925  33.0962525</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21   5.6366368  18.2636398</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22  -6.2710294  22.3543585</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23  24.0899482  23.0283686</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24  15.4120293  27.1435495</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25  21.1048903   3.1904161</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26  23.2285259  16.6768132</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27  17.9298838  15.3065145</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28 -20.7546973  16.2927119</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29  24.7325038  16.5134456</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30  17.1020128  13.2435091</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $alpha</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.05</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $ci</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] -7.623130  6.100201</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; attr(,&quot;conf.level&quot;)</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.95</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $pValue</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.8249868</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $testType</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;T-test&quot;</span></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $summaryStats</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Two Sample t-test</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data:  x and y</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; t = -0.22214, df = 58, p-value = 0.825</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 95 percent confidence interval:</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  -7.623130  6.100201</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sample estimates:</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mean of x mean of y </span></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  13.04694  13.80840 </span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $rejectNull</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;N&quot;</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; attr(,&quot;class&quot;)</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Rttest&quot;</span></span></code></pre></div>
 <p>To plot the <code>Rttest</code> object, use the <code>plot()</code>
 function:</p>
 <p>In the plot, you can notice the <em>non</em>-disparate distributions.
@@ -592,165 +500,73 @@ variances.</p>
 function as seen before. You will find the confidence level, interval,
 and original sample data used:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print Method </span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ans2)</span></code></pre></div>
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> Alpha </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 95 </td>
-  </tr>
-</tbody>
-</table>
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> Confidence_Interval </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> -8.672 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 3.087 </td>
-  </tr>
-</tbody>
-</table>
-<table>
-<caption>Rttest Data</caption>
- <thead>
-  <tr>
-   <th style="text-align:right;"> x </th>
-   <th style="text-align:right;"> y </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 10.073 </td>
-   <td style="text-align:right;"> 23.977 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 14.366 </td>
-   <td style="text-align:right;"> 9.993 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 4.860 </td>
-   <td style="text-align:right;"> 7.489 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 13.428 </td>
-   <td style="text-align:right;"> 7.325 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 12.247 </td>
-   <td style="text-align:right;"> 58.068 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 12.035 </td>
-   <td style="text-align:right;"> 2.106 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 11.424 </td>
-   <td style="text-align:right;"> 14.158 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 6.878 </td>
-   <td style="text-align:right;"> -0.433 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 14.198 </td>
-   <td style="text-align:right;"> 25.868 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 11.556 </td>
-   <td style="text-align:right;"> 13.236 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 12.376 </td>
-   <td style="text-align:right;"> 15.673 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 9.500 </td>
-   <td style="text-align:right;"> 14.680 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 11.018 </td>
-   <td style="text-align:right;"> -3.526 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 9.529 </td>
-   <td style="text-align:right;"> 0.483 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 10.501 </td>
-   <td style="text-align:right;"> -20.629 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 8.659 </td>
-   <td style="text-align:right;"> -18.680 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 16.730 </td>
-   <td style="text-align:right;"> 20.964 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 9.268 </td>
-   <td style="text-align:right;"> 2.814 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 10.249 </td>
-   <td style="text-align:right;"> 35.574 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 14.169 </td>
-   <td style="text-align:right;"> 33.096 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 8.546 </td>
-   <td style="text-align:right;"> 18.264 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 4.576 </td>
-   <td style="text-align:right;"> 22.354 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 14.697 </td>
-   <td style="text-align:right;"> 23.028 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 11.804 </td>
-   <td style="text-align:right;"> 27.144 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 13.702 </td>
-   <td style="text-align:right;"> 3.190 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 14.410 </td>
-   <td style="text-align:right;"> 16.677 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 12.643 </td>
-   <td style="text-align:right;"> 15.307 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> -0.252 </td>
-   <td style="text-align:right;"> 16.293 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 14.911 </td>
-   <td style="text-align:right;"> 16.513 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 12.367 </td>
-   <td style="text-align:right;"> 13.244 </td>
-  </tr>
-</tbody>
-</table>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ans2)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $data</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;             x           y</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  10.0732027  23.9768799</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  14.3664435   9.9932177</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3   4.8602690   7.4893398</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  13.4283231   7.3253548</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  12.2471849  58.0675679</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  12.0350882   2.1062371</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7  11.4236568  14.1584902</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8   6.8784530  -0.4327815</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9  14.1982801  25.8683998</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 11.5563960  13.2360224</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11 12.3762674  15.6733114</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12  9.4995498  14.6801061</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13 11.0175626  -3.5257172</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14  9.5294915   0.4833640</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15 10.5011743 -20.6288073</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16  8.6588637 -18.6800779</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17 16.7302921  20.9637599</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18  9.2678295   2.8139316</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19 10.2488285  35.5739193</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20 14.1686642  33.0962525</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21  8.5455456  18.2636398</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22  4.5763235  22.3543585</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23 14.6966494  23.0283686</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24 11.8040098  27.1435495</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25 13.7016301   3.1904161</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26 14.4095086  16.6768132</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27 12.6432946  15.3065145</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28 -0.2515658  16.2927119</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29 14.9108346  16.5134456</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30 12.3673376  13.2435091</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $alpha</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.05</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $ci</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] -8.672098  3.086584</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; attr(,&quot;conf.level&quot;)</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.95</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $pValue</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.340561</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $testType</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Welch&quot;</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $summaryStats</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Welch Two Sample t-test</span></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data:  x and y</span></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; t = -0.96742, df = 32.124, p-value = 0.3406</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 95 percent confidence interval:</span></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  -8.672098  3.086584</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sample estimates:</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mean of x mean of y </span></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  11.01565  13.80840 </span></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $rejectNull</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;N&quot;</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; attr(,&quot;class&quot;)</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Rttest&quot;</span></span></code></pre></div>
 <p>To plot the <code>Rttest</code> object, use the <code>plot()</code>
 function as seen before:</p>
 <p>In the plot, you can notice the <em>disparate</em> distributions. The
@@ -780,165 +596,73 @@ differences too.</p>
 function as seen before. You will find the confidence level, interval,
 and original sample data used:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print Method</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ans3)</span></code></pre></div>
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> Alpha </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 95 </td>
-  </tr>
-</tbody>
-</table>
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> Confidence_Interval </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> -8.082 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> -5.015 </td>
-  </tr>
-</tbody>
-</table>
-<table>
-<caption>Rttest Data</caption>
- <thead>
-  <tr>
-   <th style="text-align:right;"> x </th>
-   <th style="text-align:right;"> y </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 10.220 </td>
-   <td style="text-align:right;"> 19.480 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 23.099 </td>
-   <td style="text-align:right;"> 28.631 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> -5.419 </td>
-   <td style="text-align:right;"> -0.555 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 20.285 </td>
-   <td style="text-align:right;"> 25.105 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 16.742 </td>
-   <td style="text-align:right;"> 35.093 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 16.105 </td>
-   <td style="text-align:right;"> 19.534 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 14.271 </td>
-   <td style="text-align:right;"> 20.913 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 0.635 </td>
-   <td style="text-align:right;"> 3.387 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 22.595 </td>
-   <td style="text-align:right;"> 32.360 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 14.669 </td>
-   <td style="text-align:right;"> 21.065 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17.129 </td>
-   <td style="text-align:right;"> 24.175 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 8.499 </td>
-   <td style="text-align:right;"> 15.280 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 13.053 </td>
-   <td style="text-align:right;"> 14.979 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 8.588 </td>
-   <td style="text-align:right;"> 11.584 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 11.504 </td>
-   <td style="text-align:right;"> 8.869 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 5.977 </td>
-   <td style="text-align:right;"> 3.862 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 30.191 </td>
-   <td style="text-align:right;"> 38.648 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 7.803 </td>
-   <td style="text-align:right;"> 11.421 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 10.746 </td>
-   <td style="text-align:right;"> 23.100 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 22.506 </td>
-   <td style="text-align:right;"> 34.198 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 5.637 </td>
-   <td style="text-align:right;"> 13.374 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> -6.271 </td>
-   <td style="text-align:right;"> 2.557 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 24.090 </td>
-   <td style="text-align:right;"> 33.098 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 15.412 </td>
-   <td style="text-align:right;"> 25.517 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 21.105 </td>
-   <td style="text-align:right;"> 24.822 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 23.229 </td>
-   <td style="text-align:right;"> 30.542 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17.930 </td>
-   <td style="text-align:right;"> 24.878 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> -20.755 </td>
-   <td style="text-align:right;"> -13.543 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 24.733 </td>
-   <td style="text-align:right;"> 32.003 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17.102 </td>
-   <td style="text-align:right;"> 23.500 </td>
-  </tr>
-</tbody>
-</table>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ans3)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $data</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              x           y</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1   10.2196081  19.4801094</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2   23.0993306  28.6308554</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3   -5.4191930  -0.5553691</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4   20.2849694  25.1050640</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5   16.7415547  35.0929062</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6   16.1052646  19.5335945</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7   14.2709705  20.9132346</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8    0.6353591   3.3866174</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9   22.5948402  32.3597468</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10  14.6691879  21.0654605</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11  17.1288021  24.1750185</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12   8.4986494  15.2800110</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13  13.0526878  14.9791632</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14   8.5884746  11.5840384</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15  11.5035229   8.8691743</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16   5.9765910   3.8619035</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17  30.1908762  38.6478788</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18   7.8034886  11.4205370</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19  10.7464855  23.0995306</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20  22.5059925  34.1983265</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21   5.6366368  13.3736074</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22  -6.2710294   2.5567995</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23  24.0899482  33.0975132</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24  15.4120293  25.5169758</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 25  21.1048903  24.8223346</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 26  23.2285259  30.5423427</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 27  17.9298838  24.8782877</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 28 -20.7546973 -13.5433074</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 29  24.7325038  32.0027560</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 30  17.1020128  23.5002819</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $alpha</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.05</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $ci</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] -8.082480 -5.015335</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; attr(,&quot;conf.level&quot;)</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.95</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $pValue</span></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1.29572e-09</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $testType</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Paired&quot;</span></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $summaryStats</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Paired t-test</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; data:  x and y</span></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; t = -8.7339, df = 29, p-value = 1.296e-09</span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; alternative hypothesis: true mean difference is not equal to 0</span></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 95 percent confidence interval:</span></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  -8.082480 -5.015335</span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; sample estimates:</span></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; mean difference </span></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       -6.548908 </span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $rejectNull</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Y&quot;</span></span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; attr(,&quot;class&quot;)</span></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Rttest&quot;</span></span></code></pre></div>
 <p>To plot the <code>Rttest</code> object, use the <code>plot()</code>
 function as seen before:</p>
 <p>In the plot, you can notice that when a <em>Paired</em> T-Test is

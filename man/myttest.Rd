@@ -34,8 +34,12 @@ y <- rnorm(30, 3,2)
 alpha <- 0.05
 
 # Call the contructor
-obj <- myttest(x = x, y = y, alpha = 0.05)
+Rttest_obj <- myttest(x = x, y = y, alpha = 0.05)
 
-# Print object
-print(obj)
+Rttest_obj # Display the contents (note better displaying is print or plot method)
+}
+\seealso{
+\code{\link{print.Rttest}}
+
+\code{\link{plot.Rttest}}
 }

@@ -7,7 +7,7 @@
 plot(Rttest_obj)
 }
 \arguments{
-\item{Rttest_obj}{An object of class Rttest.}
+\item{Rttest_obj}{An object of class Rttest created with the myttest method.}
 }
 \value{
 The result of the specific Plot method for the class of the input object.
@@ -17,4 +17,6 @@ This function creates a generic method for Ploting Rttest objects. Uses ggplot2
 }
 \seealso{
 \code{\link{plot.Rttest}}
+
+\code{\link{myttest}}
 }

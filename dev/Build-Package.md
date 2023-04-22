@@ -3,7 +3,7 @@ Check and Build Package
 Daniel Carpenter
 2023-04-22
 
-Do this everytime you make a change
+Do this every time you make a change
 
 ``` r
 library(devtools)
@@ -38,6 +38,11 @@ devtools::check()
     ## * checking for LF line-endings in source and make files and shell scripts
     ## * checking for empty or unneeded directories
     ## Omitted 'LazyData' from DESCRIPTION
+    ##   NB: this package now depends on R (>= 3.5.0)
+    ##   WARNING: Added dependency on R >= 3.5.0 because serialized objects in
+    ##   serialize/load version 3 cannot be read in older versions of R.
+    ##   File(s) containing such objects:
+    ##     'AdvRPackage/shiny-example/.RData'
     ## * building 'AdvRPackage_0.1.0.tar.gz'
     ## 
     ## ══ Checking ════════════════════════════════════════════════════════════════════
@@ -47,7 +52,7 @@ devtools::check()
     ## • _R_CHECK_FORCE_SUGGESTS_      : FALSE
     ## • NOT_CRAN                      : true
     ## ── R CMD check ─────────────────────────────────────────────────────────────────
-    ## * using log directory 'C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpaKgrHc/AdvRPackage.Rcheck'
+    ## * using log directory 'C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpmQw3yC/AdvRPackage.Rcheck'
     ## * using R version 4.2.3 (2023-03-15 ucrt)
     ## * using platform: x86_64-w64-mingw32 (64-bit)
     ## * using session charset: UTF-8
@@ -61,9 +66,12 @@ devtools::check()
     ## * checking if this is a source package ... OK
     ## * checking if there is a namespace ... OK
     ## * checking for executable files ... OK
-    ## * checking for hidden files and directories ... OK
+    ## * checking for hidden files and directories ... NOTE
+    ## Found the following hidden files and directories:
+    ##   shiny-example/.RData
+    ## These were most likely included in error. See section 'Package
+    ## structure' in the 'Writing R Extensions' manual.
     ## * checking for portable file names ... OK
-    ## * checking serialization versions ... OK
     ## * checking whether package 'AdvRPackage' can be installed ... [11s] OK
     ## * checking installed package size ... OK
     ## * checking package directory ... OK
@@ -118,13 +126,19 @@ devtools::check()
     ## * checking for detritus in the temp directory ... OK
     ## * DONE
     ## 
-    ## Status: 2 NOTEs
+    ## Status: 3 NOTEs
     ## See
-    ##   'C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpaKgrHc/AdvRPackage.Rcheck/00check.log'
+    ##   'C:/Users/daniel.carpenter/AppData/Local/Temp/RtmpmQw3yC/AdvRPackage.Rcheck/00check.log'
     ## for details.
 
     ## ── R CMD check results ────────────────────────────────── AdvRPackage 0.1.0 ────
-    ## Duration: 1m 3.7s
+    ## Duration: 1m 5.5s
+    ## 
+    ## ❯ checking for hidden files and directories ... NOTE
+    ##   Found the following hidden files and directories:
+    ##     shiny-example/.RData
+    ##   These were most likely included in error. See section 'Package
+    ##   structure' in the 'Writing R Extensions' manual.
     ## 
     ## ❯ checking top-level files ... NOTE
     ##   Non-standard files/directories found at top level:
@@ -142,7 +156,7 @@ devtools::check()
     ##   Undefined global functions or variables:
     ##     sampleNames sampleValues where x y
     ## 
-    ## 0 errors ✔ | 0 warnings ✔ | 2 notes ✖
+    ## 0 errors ✔ | 0 warnings ✔ | 3 notes ✖
 
 ``` r
 # Build the package
@@ -157,6 +171,11 @@ devtools::build()
     ## * checking for LF line-endings in source and make files and shell scripts
     ## * checking for empty or unneeded directories
     ## Omitted 'LazyData' from DESCRIPTION
+    ##   NB: this package now depends on R (>= 3.5.0)
+    ##   WARNING: Added dependency on R >= 3.5.0 because serialized objects in
+    ##   serialize/load version 3 cannot be read in older versions of R.
+    ##   File(s) containing such objects:
+    ##     'AdvRPackage/shiny-example/.RData'
     ## * building 'AdvRPackage_0.1.0.tar.gz'
     ## 
 
@@ -175,10 +194,15 @@ devtools::install(build_vignettes = TRUE, upgrade = 'never')
     ## * checking for LF line-endings in source and make files and shell scripts
     ## * checking for empty or unneeded directories
     ## Omitted 'LazyData' from DESCRIPTION
+    ##   NB: this package now depends on R (>= 3.5.0)
+    ##   WARNING: Added dependency on R >= 3.5.0 because serialized objects in
+    ##   serialize/load version 3 cannot be read in older versions of R.
+    ##   File(s) containing such objects:
+    ##     'AdvRPackage/shiny-example/.RData'
     ## * building 'AdvRPackage_0.1.0.tar.gz'
     ## 
     ## Running "C:/PROGRA~1/R/R-42~1.3/bin/x64/Rcmd.exe" INSTALL \
-    ##   "C:\Users\DANIEL~1.CAR\AppData\Local\Temp\RtmpaKgrHc/AdvRPackage_0.1.0.tar.gz" \
+    ##   "C:\Users\DANIEL~1.CAR\AppData\Local\Temp\RtmpmQw3yC/AdvRPackage_0.1.0.tar.gz" \
     ##   --install-tests 
     ## * installing to library 'C:/Users/daniel.carpenter/AppData/Local/R/win-library/4.2'
     ## * installing *source* package 'AdvRPackage' ...

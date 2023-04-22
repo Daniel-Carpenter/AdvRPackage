@@ -6,6 +6,13 @@ Daniel Carpenter
 Do this every time you make a change
 
 ``` r
+remove.packages('AdvRPackage')
+```
+
+    ## Removing package from 'C:/Users/daniel.carpenter/AppData/Local/R/win-library/4.2'
+    ## (as 'lib' is unspecified)
+
+``` r
 install.packages('../AdvRPackage_0.1.0.tar.gz', 
                  repos = NULL, type = 'source')
 ```

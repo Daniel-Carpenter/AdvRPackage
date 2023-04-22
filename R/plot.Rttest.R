@@ -139,8 +139,8 @@ plot.Rttest <- function(Rttest_obj) {
     ### Bounds for labeling
     bounds = paste(c('Lower', 'Upper'),  'CI:')
 
-    ### CI of differences data
-    ci_diff = t.test(df_diff$sampleValues)[['conf.int']]
+    ### CI of differences data with confidence level
+    ci_diff = t.test(df_diff$sampleValues, conf.level = 1 - Rttest_obj$alpha)[['conf.int']]
 
 
     ### Function to label ONE of the confidence intervals

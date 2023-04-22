@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Do this every time you make a change
 ```{r install}
+remove.packages('AdvRPackage')
 install.packages('../AdvRPackage_0.1.0.tar.gz', 
                  repos = NULL, type = 'source')
 ```

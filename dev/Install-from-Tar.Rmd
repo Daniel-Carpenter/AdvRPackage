@@ -1,0 +1,32 @@
+---
+title: "Install Package from tar.gz file"
+author: "Daniel Carpenter"
+date: "`r Sys.Date()`"
+output: github_document  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Do this every time you make a change
+```{r install}
+install.packages('../AdvRPackage_0.1.0.tar.gz', 
+                 repos = NULL, type = 'source')
+```
+
+```{r viewVignette}
+# view the vignette
+packageName  = "AdvRPackage"
+vignetteName = "intro-to-package"
+
+vignette(vignetteName, package = packageName)
+```
+
+```{r viewDocumentation}
+?AdvRPackage::myttest
+?AdvRPackage::print
+?AdvRPackage::print.Rttest
+?AdvRPackage::plot
+?AdvRPackage::plot.Rttest
+```

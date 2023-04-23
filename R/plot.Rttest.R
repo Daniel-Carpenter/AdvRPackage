@@ -115,7 +115,7 @@ plot.Rttest <- function(Rttest_obj) {
     ggplot(mapping = getMapping() ) +
 
     # Get shared layers for better OOP approach
-    map('Differences of Sample Distributions in the T-Test', addSharedLayers)
+    map('Distribution of Samples used in the T-Test', addSharedLayers)
 
   # add boxplot of sample distributions
   outputPlots[['boxplots_distributions']] = plot_dist
@@ -172,7 +172,7 @@ plot.Rttest <- function(Rttest_obj) {
                  alpha      = 1/3) +
 
       # Get shared layers for better OOP approach
-      addSharedLayers('Distribution of Samples used in the T-Test',
+      addSharedLayers('Differences of Sample Distributions in the T-Test',
                       thePalette = 'Set2') +
 
       # Add labels for the confidence intervals using purrr

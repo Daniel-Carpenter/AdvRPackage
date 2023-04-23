@@ -1,5 +1,5 @@
 ---
-title:    'AdvRPackage'
+title:    'AdvRPackage' 
 author:   "Author: Daniel Carpenter"
 date:     "`r format(Sys.Date(), '%B %d, %Y')`"
 output: 
